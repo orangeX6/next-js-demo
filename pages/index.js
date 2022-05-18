@@ -22,7 +22,7 @@ const Homepage = (props) => {
           content="Brows a list of active React Meetups"
         />
       </Head>
-      <MeetupList meetups={props.meetups} />;
+      <MeetupList meetups={props.meetups} />
     </Fragment>
   );
 };
