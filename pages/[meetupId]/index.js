@@ -45,7 +45,7 @@ export async function getStaticPaths() {
   client.close();
   // console.log(meetups);
   return {
-    fallback: true,
+    fallback: true, // or 'blocking' if we use true we need to use router to check if theres fallback
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
