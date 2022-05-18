@@ -1,10 +1,16 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { MongoClient, ObjectId } from 'mongodb';
 
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 
 function MeetupDetails(props) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Fragment>
       <Head>
